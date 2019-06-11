@@ -1,0 +1,21 @@
+#Porta dessa aplicação
+server:
+     port: 8089
+
+#Nome do tópico que será recebido pelo consumer
+app: 
+     topic-name: test-cluster
+
+#Configurações do Kafka
+spring:
+   kafka:
+     consumer:
+        bootstrap-servers: 23.99.133.208:9092,23.99.133.0:9092,104.43.133.244:9092
+        group-id: group_id
+        auto-offset-reset: earliest
+        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer    
+     producer:
+        bootstrap-servers: 23.99.133.208:9092,23.99.133.0:9092,104.43.133.244:9092
+        key-serializer: org.apache.kafka.common.serialization.StringSerializer
+        value-serializer: org.apache.kafka.common.serialization.StringSerializer
